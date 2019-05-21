@@ -132,6 +132,7 @@ MYSOFA_EXPORT int mysofa_check(struct MYSOFA_HRTF *hrtf) {
 			"cartesian"))
 		return MYSOFA_INVALID_FORMAT;
 
+#if 0
 	if (!fequals(hrtf->ReceiverPosition.values[0],
 			0.) || hrtf->ReceiverPosition.values[1] > 0
 			|| !fequals(hrtf->ReceiverPosition.values[2], 0.)
@@ -141,6 +142,7 @@ MYSOFA_EXPORT int mysofa_check(struct MYSOFA_HRTF *hrtf) {
 			|| !fequals(hrtf->ReceiverPosition.values[5], 0.)) {
 		return MYSOFA_INVALID_FORMAT;
 	}
+#endif
 
 	/* read source positions */
 	if (!verifyAttribute(hrtf->SourcePosition.attributes, "DIMENSION_LIST",
